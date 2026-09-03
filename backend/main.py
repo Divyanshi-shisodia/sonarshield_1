@@ -560,6 +560,9 @@ def download_report(filename: str):
 
 @app.get("/")
 def root():
+    if os.path.exists(FRONTEND_DIR):
+        return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
+
     return {"service": "SONARSHIELD API", "status": "ok", "mode": MODEL_MODE}
 @app.get("/{full_path:path}")
 async def serve_frontend(full_path: str):

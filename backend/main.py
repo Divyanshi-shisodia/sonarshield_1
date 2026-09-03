@@ -28,11 +28,14 @@ DEMO_DIR = os.path.join(DATA_DIR, "demo")
 UPLOAD_DIR = os.path.join(DATA_DIR, "uploads")
 PROCESSED_DIR = os.path.join(DATA_DIR, "processed")
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
+FRONTEND_DIR = os.path.join(BASE_DIR, "frontend", "dist")
 
 for d in (UPLOAD_DIR, PROCESSED_DIR, REPORTS_DIR):
     os.makedirs(d, exist_ok=True)
 
 app = FastAPI(title="SONARSHIELD API", version="1.0.0")
+if os.path.exists(FRONTEND_DIR):
+    app.mount("/assets", StaticFiles(directory=os.path.join(FRONTEND_DIR, "assets")), name="assets")
 
 app.add_middleware(
     CORSMiddleware,
@@ -558,3 +561,14 @@ def download_report(filename: str):
 @app.get("/")
 def root():
     return {"service": "SONARSHIELD API", "status": "ok", "mode": MODEL_MODE}
+@app.get("/{full_path:path}")
+async def serve_frontend(full_path: str):
+    if os.path.exists(FRONTEND_DIR):
+        requested_file = os.path.join(FRONTEND_DIR, full_path)
+
+        if full_path and os.path.isfile(requested_file):
+            return FileResponse(requested_file)
+
+        return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
+
+    raise HTTPException(status_code=404, detail="Frontend not built")

@@ -328,10 +328,24 @@ def segment_endpoint(image_id: str = Form(...)):
     colored_mask[:, :, 2] = seg_result["mask"] * 120
     overlay = cv2.addWeighted(overlay, 1.0, colored_mask, 0.45, 0)
     for obj in objects:
-        cv2.rectangle(overlay, (obj["x"], obj["y"]), (obj["x"] + obj["width"], obj["y"] + obj["height"]),
-                       (0, 255, 220), 2)
-        cv2.putText(overlay, f'{obj["object_id"]} {obj["confidence"]*100:.0f}%',
-                    (obj["x"], max(12, obj["y"] - 6)), cv2.FONT_HERSHEY_SIMPLEX, 0.42, (0, 255, 220), 1)
+        cv2.rectangle(
+        overlay,
+        (obj["x"], obj["y"]),
+        (obj["x"] + obj["width"], obj["y"] + obj["height"]),
+        (0, 0, 255),
+        2
+    )
+
+        cv2.putText(
+        overlay,
+        f'{obj["object_id"]} {obj["confidence"]*100:.0f}%',
+        (obj["x"], max(16, obj["y"] - 6)),
+        cv2.FONT_HERSHEY_SIMPLEX,
+        0.42,
+        (0, 0, 255),
+        1,
+        cv2.LINE_AA
+    )
     overlay_path = os.path.join(PROCESSED_DIR, f"{image_id}_overlay.png")
     cv2.imwrite(overlay_path, overlay)
 

@@ -181,7 +181,7 @@ export default function SonarAnalysis() {
                       key={t}
                       onClick={() => setTab(t)}
                       className={`px-3 py-1.5 rounded-md text-xs font-semibold uppercase tracking-wide transition-colors ${
-                        tab === t ? "bg-cyan-glow/15 text-cyan-glow" : "text-slate-400 hover:text-cyan-glow"
+                        tab === t ? "bg-cyan-glow/10 text-cyan-glow border border-cyan-glow/20" : "text-slate-400 hover:text-cyan-glow"
                       }`}
                     >
                       {t}

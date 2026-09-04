@@ -4,17 +4,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        abyss: {
-          950: '#050b14',
-          900: '#0a1220',
-          800: '#0f1c2e',
-          700: '#152840',
-          600: '#1c3450',
-        },
-        cyan: {
-          glow: '#22e5e0',
-        },
-      },
+  abyss: {
+    950: '#08111C',
+    900: '#0D1724',
+    800: '#132131',
+    700: '#1A2C40',
+    600: '#263B51',
+  },
+
+  cyan: {
+    glow: '#4FB3BF',
+  },
+
+  sonar: {
+    blue: '#3B82A0',
+    teal: '#4FB3BF',
+  },
+
+  danger: {
+    DEFAULT: '#EF4444',
+  },
+},
       fontFamily: {
         mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui'],

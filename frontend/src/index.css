@@ -12,31 +12,37 @@ html, body, #root {
 }
 
 body {
-  background-color: #050b14;
+  background-color: #08111C;
   color: #e6f3f3;
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(34,229,224,0.08), transparent),
+    radial-gradient(
+      ellipse 80% 50% at 50% -10%,
+      rgba(79,179,191,0.055),
+      transparent
+    ),
     linear-gradient(rgba(34,229,224,0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(34,229,224,0.045) 1px, transparent 1px);
   background-size: auto, 44px 44px, 44px 44px;
 }
 
 .glass {
-  background: linear-gradient(180deg, rgba(21,40,64,0.55), rgba(10,18,32,0.55));
-  border: 1px solid rgba(34,229,224,0.14);
+  background: rgba(19, 33, 49, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.12);
   backdrop-filter: blur(10px);
 }
 
 .glass-strong {
-  background: linear-gradient(180deg, rgba(21,40,64,0.85), rgba(10,18,32,0.85));
-  border: 1px solid rgba(34,229,224,0.18);
-  backdrop-filter: blur(14px);
+  background: rgba(13, 23, 36, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  backdrop-filter: blur(12px);
 }
 
 .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
 
-.text-glow { text-shadow: 0 0 12px rgba(34,229,224,0.55); }
+.text-glow {
+  text-shadow: 0 0 8px rgba(79,179,191,0.25);
+}
 
 ::-webkit-scrollbar { width: 8px; height: 8px; }
 ::-webkit-scrollbar-track { background: #0a1220; }

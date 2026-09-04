@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, CircleMarker, Popup, Polyline } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  CircleMarker,
+  Popup,
+  Polyline,
+  GeoJSON,
+} from "react-leaflet";
 import { getAnomalies } from "../services/api";
 import RiskBadge from "../components/RiskBadge";
+import indiaGeoJSON from "../data/india-soi.geojson";
 
 const RISK_COLOR: Record<string, string> = { HIGH: "#f87171", MEDIUM: "#facc15", LOW: "#4ade80" };
 const BASE_CENTER: [number, number] = [15.2993, 74.1240];
@@ -37,6 +45,15 @@ export default function SurveyMap() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; OpenStreetMap contributors'
           />
+          <GeoJSON
+  data={indiaGeoJSON}
+  style={{
+    color: "#ef4444",
+    weight: 2,
+    opacity: 0.9,
+    fillOpacity: 0,
+  }}
+/>
           <Polyline positions={surveyPath} pathOptions={{ color: "#22e5e0", dashArray: "6 6", weight: 2 }} />
           {points.map((p, i) => {
             const a = anomalies[i];

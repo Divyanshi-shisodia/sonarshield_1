@@ -195,7 +195,7 @@ export default function SonarAnalysis() {
                   Clear
                 </button>
               </div>
-              <div className="p-4 flex items-center justify-center bg-abyss-900 min-h-[420px]">
+              <div className="p-4 flex items-center justify-center g-[#F7FCFE] min-h-[420px]">
                 {currentImg() ? (
                   <img src={currentImg() as string} className="max-h-[460px] rounded-lg border border-white/10" />
                 ) : (

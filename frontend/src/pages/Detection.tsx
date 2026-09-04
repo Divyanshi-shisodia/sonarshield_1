@@ -29,7 +29,7 @@ export default function Detection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         <div className="glass rounded-xl overflow-hidden">
           <div className="px-4 py-2 border-b border-white/10 text-sm font-semibold">Detection + Segmentation Overlay</div>
-          <div className="p-4 bg-abyss-900 flex justify-center">
+          <div className="p-4 g-[#F7FCFE] flex justify-center">
             {m.overlayUrl && <img src={m.overlayUrl} className="max-h-[420px] rounded-lg border border-white/10" />}
           </div>
         </div>

@@ -11,8 +11,10 @@ export default function TopBar() {
   return (
     <header className="sticky top-0 z-30 glass-strong border-b border-cyan-glow/10 px-6 py-3 flex items-center justify-between">
       <div>
-        <div className="font-bold tracking-wide text-sm text-glow">SONARSHIELD</div>
-        <div className="text-[10px] mono text-slate-400 tracking-widest">AI UNDERWATER INTELLIGENCE PLATFORM</div>
+        <div className="font-bold tracking-wide text-sm text-white text-glow">
+  SONARSHIELD
+</div>
+        <div className="text-[10px] mono text-[#B8CBD6] tracking-widest">AI UNDERWATER INTELLIGENCE PLATFORM</div>
       </div>
 
       <div className="flex items-center gap-6 mono text-xs">

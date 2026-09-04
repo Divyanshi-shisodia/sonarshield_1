@@ -12,7 +12,7 @@ html, body, #root {
 }
 
 body {
-  background-color: #08111C;
+  background-color: #151A1E;
   color: #e6f3f3;
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   background-image:
@@ -63,7 +63,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent, rgba(34,229,224,0.18), transparent);
+  background: linear-gradient(180deg, transparent, rgba(79,179,191,0.10), transparent);
   animation: scan 3s linear infinite;
   pointer-events: none;
 }

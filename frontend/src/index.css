@@ -8,7 +8,9 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
@@ -17,14 +19,23 @@ body {
   background-color: #EAF8FC;
   color: #183B4E;
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
   background-image:
     radial-gradient(
       ellipse 80% 50% at 50% -10%,
-      rgba(79,179,191,0.055),
+      rgba(79, 179, 191, 0.055),
       transparent
     ),
-    linear-gradient(rgba(34,229,224,0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,229,224,0.045) 1px, transparent 1px);
+    linear-gradient(
+      rgba(34, 229, 224, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(34, 229, 224, 0.045) 1px,
+      transparent 1px
+    );
+
   background-size: auto, 44px 44px, 44px 44px;
 }
 
@@ -45,7 +56,7 @@ body {
 }
 
 .text-glow {
-  text-shadow: 0 0 8px rgba(79,179,191,0.25);
+  text-shadow: 0 0 8px rgba(79, 179, 191, 0.25);
 }
 
 ::-webkit-scrollbar {
@@ -67,7 +78,8 @@ body {
 }
 
 @keyframes pulse-soft {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
 
@@ -94,12 +106,14 @@ body {
   content: '';
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(79,179,191,0.10),
+    rgba(79, 179, 191, 0.10),
     transparent
   );
+
   animation: scan 3s linear infinite;
   pointer-events: none;
 }
@@ -108,41 +122,43 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+
   padding: 2px 10px;
   border-radius: 999px;
+
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
 
 .badge-demo {
-  background: rgba(234,179,8,0.15);
+  background: rgba(234, 179, 8, 0.15);
   color: #eab308;
-  border: 1px solid rgba(234,179,8,0.35);
+  border: 1px solid rgba(234, 179, 8, 0.35);
 }
 
 .badge-live {
-  background: rgba(34,229,224,0.15);
+  background: rgba(34, 229, 224, 0.15);
   color: #22e5e0;
-  border: 1px solid rgba(34,229,224,0.35);
+  border: 1px solid rgba(34, 229, 224, 0.35);
 }
 
 .badge-high {
-  background: rgba(239,68,68,0.15);
+  background: rgba(239, 68, 68, 0.15);
   color: #f87171;
-  border: 1px solid rgba(239,68,68,0.35);
+  border: 1px solid rgba(239, 68, 68, 0.35);
 }
 
 .badge-medium {
-  background: rgba(234,179,8,0.15);
+  background: rgba(234, 179, 8, 0.15);
   color: #facc15;
-  border: 1px solid rgba(234,179,8,0.35);
+  border: 1px solid rgba(234, 179, 8, 0.35);
 }
 
 .badge-low {
-  background: rgba(34,197,94,0.15);
+  background: rgba(34, 197, 94, 0.15);
   color: #4ade80;
-  border: 1px solid rgba(34,197,94,0.35);
+  border: 1px solid rgba(34, 197, 94, 0.35);
 }
 
 .leaflet-container {
